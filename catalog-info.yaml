@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: eb4o3niel-nodejs-gitops
+  description: This is GitOps manifest for eb4o3niel-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=eb4o3niel-nodejs
+    backstage.io/kubernetes-id: eb4o3niel-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: eb4o3niel-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:eb4o3niel-nodejs
